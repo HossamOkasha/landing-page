@@ -1,0 +1,138 @@
+/* base rule */
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  background-color:#FDFFFC;
+  margin:0;
+  /* to avoid fixed nav */
+  margin-top: 70px;  
+}
+
+
+/* Global  */
+.container{
+  width:90%;
+  margin:auto;
+  overflow:hidden;
+}
+
+.highlight {
+  font-weight: 700;
+  color: #FF9F1C; 
+}
+
+.active__section {
+  background: #fcf300;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin-left: 10px;
+  float: right;
+  color: lightslategray
+}
+
+li:hover {
+  cursor: pointer;
+  background: #333;
+  transition: ease 0.4s all;
+  color: #fff;
+  padding: 1px;
+}
+
+
+/* ---- Layout Rules ---- */
+.main__hero {
+  min-height: 60vh;
+}
+
+main {
+  margin: 10vh 0 10vh 1.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section {
+  min-height: 80vh;
+  width: 60%;
+  margin-bottom: 8em;
+}
+
+
+/* Header Style */
+.page__header {
+  min-height:70px;
+  background: #011627; 
+  color: white;
+  border-bottom: 3px solid orange;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+}
+
+.branding {
+  float: left;
+}
+
+
+/* nav */
+#nav__list {
+  margin-top: 20px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/* main hero */
+.main__hero {
+  text-align: center;
+  background-color: #111;
+  color: #fff;
+}
+
+.main__hero h1 {
+  font-size:3em;
+  padding-top:18vh;
+}
+
+.main__hero p {
+  font-size: 1.3em;
+
+}
+
+
+/* Sections Style */
+section {
+  border: 2px solid black;
+  border-radius: 30px;
+}
+
+section h2 {
+  border-bottom: 2px solid seagreen;
+  font-size: 3em;
+}
+
+section:nth-child(even) {
+  align-self: flex-end;
+  margin-right: 15px;
+}
+
+
+/* Footer Style*/
+.page__footer {
+  padding: 20px;
+  margin-top: 20px;
+  background: #111;
+  color: white;
+}
