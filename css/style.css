@@ -159,6 +159,15 @@ section:nth-child(even) {
     font-size: 16px;
   }
 
+  .main__hero h1 {
+    padding-top: 25vh;
+    font-size: 2em;
+  }
+
+  .main__hero p {
+    font-size: 1em;
+  }
+
   section {
     width: 100%;
   }
