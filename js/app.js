@@ -55,6 +55,12 @@ window.addEventListener("scroll", function () {
         const viewOut = .6*section.clientHeight;
         const currentLi = document.getElementById(generateLiID(section));
         if (offset <= viewOut && offset >= (-viewOut+50) ){
+            const idInt = section.id[section.id.length-1] // format: 1 2 3 
+            if ( idInt % 2 == 0) {
+                topBtn.classList.add('btnPosition')
+            } else {
+                topBtn.classList.remove('btnPosition')         
+            } 
             section.classList.add("active__section");  
             // activate the nav item 
             currentLi.classList.add('active__li');         
