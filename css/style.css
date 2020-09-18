@@ -10,6 +10,7 @@ body{
   /* to avoid fixed nav */
   margin-top: 70px;  
 }
+/* End of Base rule */
 
 
 /* Global  */
@@ -36,7 +37,6 @@ ul {
 li {
   list-style: none;
   margin-left: 10px;
-  float: right;
   color: lightslategray
 }
 
@@ -47,6 +47,7 @@ li:hover {
   color: #fff;
   padding: 1px;
 }
+/* End of Global  */
 
 
 /* ---- Layout Rules ---- */
@@ -66,9 +67,10 @@ section {
   width: 60%;
   margin-bottom: 8em;
 }
+/* ---- End of Layout Rules ---- */
 
 
-/* Header Style */
+/* Navbar Style */
 .page__header {
   min-height:70px;
   background: #011627; 
@@ -84,17 +86,18 @@ section {
   float: left;
 }
 
-
-/* nav */
+/* Nav List */
 #nav__list {
   margin-top: 20px;
   font-size: 1.5em;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
 }
+/* End of Navbar */
 
 
-/* main hero */
+/* Main Hero */
 .main__hero {
   text-align: center;
   background-color: #111;
@@ -110,6 +113,7 @@ section {
   font-size: 1.3em;
 
 }
+/* End of Main Hero */
 
 
 /* Sections Style */
@@ -127,6 +131,7 @@ section:nth-child(even) {
   align-self: flex-end;
   margin-right: 15px;
 }
+/* End of Sections */
 
 
 /* Footer Style*/
@@ -135,4 +140,31 @@ section:nth-child(even) {
   margin-top: 20px;
   background: #111;
   color: white;
+}
+/* End of Footer */
+
+
+/* Media Query */ 
+@media(max-width: 768px){
+  .branding, .nav__menu {
+    float: none;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #nav__list {
+    justify-content: center;
+    padding-bottom: 15px;
+    font-size: 16px;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  section:nth-child(even),  section:nth-child(odd) {
+    align-self: center;
+    margin-right: 20px;
+  }
 }
