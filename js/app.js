@@ -4,6 +4,14 @@ const sections = document.querySelectorAll("section"); //NodeList
 /* ---End of Global Variables--- */
 
 
+/* ---helpers--- */
+// dynamically returns an id(string) for the nav item from his section target
+const generateLiID = section => {
+    //id format: 'li1' 'li2' 'li3'
+    return `li${section.id[section.id.length-1]}`;
+}
+
+
 /* ---build the nav--- */
 //using a function to make a locally fragment
 const buildNav = () => {
@@ -13,8 +21,10 @@ const buildNav = () => {
     sections.forEach(section => {
         const li = document.createElement("li");
         const secTitle = section.dataset.nav;
-        // [navscroll] dataset for scrolling to a section using his id
+        // [navscroll] dataset for storing section id
         li.setAttribute("data-navscroll", section.id);
+        // adding id for the nav items  
+        li.setAttribute("id", generateLiID(section)); 
         li.textContent = `${secTitle}`;
         fragment.appendChild(li);
     });
@@ -25,16 +35,20 @@ buildNav();
 
 
 /* ---distinguish the section in view---*/
-// Add class 'active' to section when near(~200px) top of viewport
+// Add class 'active' to section when near top of viewport
 // and remove the class from the section if it out of the viewport
 window.addEventListener("scroll", function () {
     sections.forEach(section => {
         const offset = window.pageYOffset - section.offsetTop;
         const viewOut = .6*section.clientHeight;
+        const currentLi = document.getElementById(generateLiID(section));
         if (offset <= viewOut && offset >= (-viewOut+50) ){
-            section.classList.add("active__section");            
+            section.classList.add("active__section");  
+            // activate the nav item 
+            currentLi.classList.add('active__li');         
         } else {
             section.classList.remove("active__section");
+            currentLi.classList.remove('active__li');
         }
     });
 });
@@ -43,7 +57,7 @@ window.addEventListener("scroll", function () {
 
 /* ---Scroll to Sections--- */
 navList.addEventListener("click", e => {
-    // using the nav dataset in the items
+    // using the navscroll dataset to select the sections
     const sec = document.querySelector(`#${e.target.dataset.navscroll}`);
     window.scrollTo({
         top: sec.offsetTop - 100, // (-100) to avoid fixed navbar

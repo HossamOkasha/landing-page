@@ -29,6 +29,10 @@ body{
   background: #fcf300;
 }
 
+.active__li {
+  color: #fcf300;
+}
+
 ul {
   margin: 0;
   padding: 0;
