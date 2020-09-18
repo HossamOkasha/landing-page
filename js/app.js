@@ -1,15 +1,27 @@
 /* ---Global variables--- */
 const navList = document.querySelector("ul"); //HTML element
 const sections = document.querySelectorAll("section"); //NodeList
+const topBtn = document.getElementById('topBtn');
 /* ---End of Global Variables--- */
 
 
-/* ---helpers--- */
+/* ---Helpers--- */
 // dynamically returns an id(string) for the nav item from his section target
 const generateLiID = section => {
     //id format: 'li1' 'li2' 'li3'
     return `li${section.id[section.id.length-1]}`;
 }
+
+// show and hide scroll to top btn
+const showHideBtn = btn => {
+    if(window.pageYOffset >= 500) {
+        btn.style.display = "block";
+    }
+    else {
+        btn.style.display = "none";
+    }
+}
+/* End Of Helpers */
 
 
 /* ---build the nav--- */
@@ -51,6 +63,7 @@ window.addEventListener("scroll", function () {
             currentLi.classList.remove('active__li');
         }
     });
+    showHideBtn(topBtn);
 });
 /* ---End of distinguishing the section--- */
 
@@ -65,3 +78,14 @@ navList.addEventListener("click", e => {
     });
 });
 /* ---End of Scroll to Sections--- */
+
+
+/* ---Scroll To Top--- */
+topBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+})
+/* ---End Of Scroll To Top-- */

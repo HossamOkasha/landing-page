@@ -148,6 +148,39 @@ section:nth-child(even) {
 /* End of Footer */
 
 
+/* Go Top Button */
+/* ref-style-only: 
+      https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
+*/
+#topBtn {
+  /* display: none;  */
+  position: fixed; 
+  z-index: 1000; 
+  border: none; 
+  outline: none; 
+  background-color: #E71D36; 
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px; 
+  border-radius: 10px; 
+  font-size: 25px; 
+}
+
+button {
+  bottom: 20px; 
+  right: 30px; 
+}
+
+#topBtn:hover {
+  background-color: #555;
+} 
+
+.btnPosition {
+  left: 30px;
+}
+/* End of Top Button */
+
+
 /* Media Query */ 
 @media(max-width: 768px){
   .branding, .nav__menu {
